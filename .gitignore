@@ -1,0 +1,41 @@
+# Arquivos Python compilados
+*.py[cod]
+__pycache__/
+*.so
+*.pyd
+*.pyo
+*$py.class
+
+# Diretórios de virtual environment
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+ENV.bak/
+
+# Arquivos de configuração do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos de logs
+*.log
+*.csv
+*.dat
+*.sqlite
+
+# Arquivos de cache e temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Configurações do sistema operacional
+Thumbs.db
