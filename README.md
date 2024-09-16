@@ -20,10 +20,7 @@ Este projeto visa analisar os dados relacionados ao abandono de cães e gatos no
 
 ### Pré-requisitos
 
-Instale as bibliotecas necessárias com o comando:
-
-```bash
-pip install pandas matplotlib
+Instale as bibliotecas necessárias
 
 ## Execução
 ### Execute o script analysis.py dentro da pasta src:
