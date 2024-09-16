@@ -1,0 +1,61 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Dados
+dados = {
+    'Descrição': [
+        'Total de cães e gatos no Brasil', 
+        'Total de cães no Brasil', 
+        'Total de gatos no Brasil', 
+        'Cães e gatos abandonados no Brasil', 
+        'Cães e gatos vivendo em abrigos', 
+        'Cães vivendo em abrigos', 
+        'Gatos vivendo em abrigos', 
+        'Percentual de cães castrados', 
+        'Percentual de gatos castrados', 
+        'Percentual de cães microchipados', 
+        'Percentual de gatos microchipados',
+        'Percentual de tutores de cães que realizam ato de bondade ao encontrar um animal abandonado',
+        'Percentual de tutores de gatos que realizam ato de bondade ao encontrar um animal abandonado'
+    ],
+    'Valor': [121.3, 82.1, 39.2, 30.2, 0.185, 0.1776, 0.0074, 28, 53, 8, 10, 49, 48]
+}
+
+# Criando DataFrame
+df = pd.DataFrame(dados)
+
+# Exibir os dados
+print("Tabela de Dados:")
+print(df)
+
+# Função para plotar gráficos
+def plotar_graficos():
+    # Gráfico de barras - Total de cães e gatos
+    plt.figure(figsize=(10,6))
+    plt.bar(['Cães', 'Gatos'], [df['Valor'][1], df['Valor'][2]], color=['blue', 'green'])
+    plt.title('Total de Cães e Gatos no Brasil')
+    plt.ylabel('Milhões')
+    plt.show()
+
+    # Gráfico de pizza - Percentual de castração
+    labels = ['Cães Castrados', 'Gatos Castrados', 'Cães Não Castrados', 'Gatos Não Castrados']
+    sizes = [df['Valor'][7], df['Valor'][8], 100 - df['Valor'][7], 100 - df['Valor'][8]]
+    colors = ['lightblue', 'lightgreen', 'blue', 'green']
+    
+    plt.figure(figsize=(7,7))
+    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    plt.title('Percentual de Castração de Cães e Gatos')
+    plt.show()
+
+    # Gráfico de pizza - Percentual de microchipagem
+    labels_chip = ['Cães Microchipados', 'Gatos Microchipados', 'Cães Não Microchipados', 'Gatos Não Microchipados']
+    sizes_chip = [df['Valor'][9], df['Valor'][10], 100 - df['Valor'][9], 100 - df['Valor'][10]]
+    colors_chip = ['lightblue', 'lightgreen', 'blue', 'green']
+    
+    plt.figure(figsize=(7,7))
+    plt.pie(sizes_chip, labels=labels_chip, colors=colors_chip, autopct='%1.1f%%', startangle=140)
+    plt.title('Percentual de Microchipagem de Cães e Gatos')
+    plt.show()
+
+# Executar as funções de visualização
+plotar_graficos()
